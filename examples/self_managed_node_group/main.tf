@@ -14,13 +14,20 @@ provider "kubernetes" {
   }
 }
 
+resource "kubernetes_namespace" "example" {
+  metadata {
+    name = "Banerjee"
+  }
+}
+
+
 data "aws_caller_identity" "current" {}
 data "aws_availability_zones" "available" {}
 
 locals {
   name            = "ex-${replace(basename(path.cwd), "_", "-")}"
   cluster_version = "1.27"
-  region          = "eu-west-1"
+  region          = "us-west-2"
 
   vpc_cidr = "10.0.0.0/16"
   azs      = slice(data.aws_availability_zones.available.names, 0, 3)

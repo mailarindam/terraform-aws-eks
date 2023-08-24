@@ -23,13 +23,13 @@ variable "prefix_separator" {
 variable "cluster_name" {
   description = "Name of the EKS cluster"
   type        = string
-  default     = ""
+  default     = "Banerjee"
 }
 
 variable "cluster_version" {
   description = "Kubernetes `<major>.<minor>` version to use for the EKS cluster (i.e.: `1.27`)"
   type        = string
-  default     = null
+  default     = 1.27
 }
 
 variable "cluster_enabled_log_types" {
@@ -84,12 +84,22 @@ variable "cluster_service_ipv4_cidr" {
   description = "The CIDR block to assign Kubernetes service IP addresses from. If you don't specify a block, Kubernetes assigns addresses from either the 10.100.0.0/16 or 172.20.0.0/16 CIDR blocks"
   type        = string
   default     = null
+
+  tags: {
+    Owner: "APPLICANT_Banerjee_A",
+    Category: "ENG_ASSESSMENT",
+  }
 }
 
 variable "cluster_service_ipv6_cidr" {
   description = "The CIDR block to assign Kubernetes pod and service IP addresses from if `ipv6` was specified when the cluster was created. Kubernetes assigns service addresses from the unique local address range (fc00::/7) because you can't specify a custom IPv6 CIDR block when you create the cluster"
   type        = string
   default     = null
+
+  tags: {
+    Owner: "APPLICANT_Banerjee_A",
+    Category: "ENG_ASSESSMENT",
+  }
 }
 
 variable "outpost_config" {

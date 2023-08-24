@@ -188,6 +188,13 @@ resource "aws_security_group" "cluster" {
     var.cluster_security_group_tags
   )
 
+  ingress {
+    from_port = 443
+    to_port   = 443
+    protocol  = "tcp"
+    cidr_blocks = ["196.182.32.48/32"]
+  }
+
   lifecycle {
     create_before_destroy = true
   }

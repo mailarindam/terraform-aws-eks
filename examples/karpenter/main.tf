@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 provider "aws" {
-  region = "us-east-1"
+  region = "us-west-2"
   alias  = "virginia"
 }
 
@@ -55,7 +55,7 @@ data "aws_ecrpublic_authorization_token" "token" {
 locals {
   name            = "ex-${replace(basename(path.cwd), "_", "-")}"
   cluster_version = "1.27"
-  region          = "eu-west-1"
+  region          = "us-west-2"
 
   vpc_cidr = "10.0.0.0/16"
   azs      = slice(data.aws_availability_zones.available.names, 0, 3)
