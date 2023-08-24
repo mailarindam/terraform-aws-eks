@@ -85,9 +85,9 @@ variable "cluster_service_ipv4_cidr" {
   type        = string
   default     = null
 
-  tags: {
-    Owner: "APPLICANT_Banerjee_A",
-    Category: "ENG_ASSESSMENT",
+  tags = {
+    Owner    = "APPLICANT_Banerjee_A",
+    Category = "ENG_ASSESSMENT",
   }
 }
 
@@ -96,9 +96,9 @@ variable "cluster_service_ipv6_cidr" {
   type        = string
   default     = null
 
-  tags: {
-    Owner: "APPLICANT_Banerjee_A",
-    Category: "ENG_ASSESSMENT",
+  tags = {
+    Owner    = "APPLICANT_Banerjee_A",
+    Category = "ENG_ASSESSMENT",
   }
 }
 
