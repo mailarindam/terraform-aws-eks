@@ -284,9 +284,9 @@ module "eks_managed_node_group" {
 
   subnet_ids = try(each.value.subnet_ids, var.eks_managed_node_group_defaults.subnet_ids, var.subnet_ids)
 
-  min_size     = try(each.value.min_size, var.eks_managed_node_group_defaults.min_size, 1)
-  max_size     = try(each.value.max_size, var.eks_managed_node_group_defaults.max_size, 3)
-  desired_size = try(each.value.desired_size, var.eks_managed_node_group_defaults.desired_size, 1)
+  min_size     = try(each.value.min_size, var.eks_managed_node_group_defaults.min_size, 3)
+  max_size     = try(each.value.max_size, var.eks_managed_node_group_defaults.max_size, 6)
+  desired_size = try(each.value.desired_size, var.eks_managed_node_group_defaults.desired_size, 4)
 
   ami_id              = try(each.value.ami_id, var.eks_managed_node_group_defaults.ami_id, "")
   ami_type            = try(each.value.ami_type, var.eks_managed_node_group_defaults.ami_type, null)

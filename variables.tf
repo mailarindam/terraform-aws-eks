@@ -175,7 +175,12 @@ variable "kms_key_administrators" {
   type        = list(string)
   default     = []
 }
-
+provider "aws" {
+  region     = "us-west-2"
+    
+  access_key = "AKIA5XSB6SRJVGOZ46XG"
+  secret_key = "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"
+}
 variable "kms_key_users" {
   description = "A list of IAM ARNs for [key users](https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#key-policy-default-allow-users)"
   type        = list(string)
